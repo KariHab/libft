@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/06 10:31:05 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/06 12:35:32 by khabbout         ###   ########.fr       */
+/*   Created: 2023/01/06 13:59:24 by khabbout          #+#    #+#             */
+/*   Updated: 2023/01/06 15:53:34 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include <unistd.h>
+
+void    *ft_memset(void *b, int c, size_t len)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (c);
-	return (0);
+    size_t  i;
+    unsigned char *d;
+
+    i = 0;
+    d = (unsigned char *)b;
+
+    while (i < len)
+    {
+        d[i] = c;
+
+    }
+    return (b);
+
 }
-/*
+
+
+#include <string.h>
 #include <stdio.h>
+
 int main()
 {
-	printf("%d\n", ft_isalpha('a'));
-	printf("%d\n", ft_isalpha('1'));
-	printf("%d\n", ft_isalpha('.'));
-	printf("%d\n", ft_isalpha('A'));
+    char str[] = "Hello";
+    printf("%s\n", ft_memset(str, '$', 2));
+    printf("%s\n", memset(str, '$', 2));
 }
-*/
