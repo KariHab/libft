@@ -13,30 +13,30 @@
 
 #include <unistd.h>
 
-char    *ft_strnstr(const char *s1, const char *s2, size_t n)
+char    *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
     size_t i;
     size_t j;
 
-    if (s1 == NULL || s2 == NULL)
+    if (haystack == NULL || needle == NULL)
         return (NULL);
     
     i = 0;
     j = 0;
 
-	if (s2[j] == '\0')
+	if (needle[j] == '\0')
 	{
-		return ((char *)s1);
+		return ((char *)haystack);
 	}
-	while (s1[i] != '\0' && i < n)
+	while (haystack[i] != '\0' && i < len)
 	{
-		while (s1[i + j] == s2[j] && s1[i + j] != '\0')
+		while (haystack[i + j] == needle[j] && haystack[i + j] != '\0')
 		{
 			j++;
 		}
-		if (s2[j] == '\0')
+		if (needle[j] == '\0')
 		{
-			return ((char *)s1+ i);
+			return ((char *)haystack+ i);
 		}
 		i++;
 		j = 0;
@@ -49,7 +49,7 @@ char    *ft_strnstr(const char *s1, const char *s2, size_t n)
 int main ()
 {
 	char str[] = "Je suis Karima et j'aime le code";
-	char find[] = "\0";
+	char find[] = "suis";
 
     printf("%s\n", strnstr(str, find, 20));
 	printf("%s\n", ft_strnstr(str, find, 20));
