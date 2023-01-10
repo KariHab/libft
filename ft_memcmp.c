@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/10 09:08:29 by khabbout          #+#    #+#             */
+/*   Updated: 2023/01/10 09:08:29 by khabbout         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <unistd.h>
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
@@ -11,9 +24,13 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (i < n -1)
     {
         if (((unsigned char *)s1)[i] > (((unsigned char *)s2)[i]))
-            return (1);
+        {
+            return (((unsigned char *)s1)[i] - (((unsigned char *)s2)[i]));
+        }
         else if (((unsigned char *)s1)[i] < (((unsigned char *)s2)[i]))
-            return(-1);
+        {
+            return(((unsigned char *)s1)[i] - (((unsigned char *)s2)[i]));
+        }
         i++;
     }
     return (0);

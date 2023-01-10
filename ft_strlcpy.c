@@ -6,9 +6,10 @@
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:31:41 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/06 10:32:26 by khabbout         ###   ########.fr       */
+/*   Updated: 2023/01/10 09:06:44 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
 size_t	ft_strlen(const char *str)
@@ -46,7 +47,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 int main ()
 {
-	char src [] = "Hello";
+	char src [] = "Hello je suis Karima";
 	char dest [5];
 	ft_strlcpy(dest, src, 10);
 	printf("Copied array is: %s", dest);
