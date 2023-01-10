@@ -9,33 +9,45 @@
 /*   Updated: 2023/01/06 10:32:26 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i])
+	while (str && str[i])
 		i++;
 	return (i);
 }
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
 
 	j = ft_strlen(src);
 	i = 0;
-	if (size != 0)
+	if (dst == NULL || src == NULL)
+		return (0);
+	if (dstsize > 0)
 	{
-		while (src[i] && i < size -1)
+		while (src[i] && i < (dstsize -1))
 		{
-			dest[i] = src[i];
+			dst[i] = src[i];
 			i++;
 		}
-		dest[i] = '\0';
+		dst[i] = '\0';
 	}
 	return (j);
 }
 
+#include <stdio.h>
+
+int main ()
+{
+	char src [] = "Hello";
+	char dest [5];
+	ft_strlcpy(dest, src, 10);
+	printf("Copied array is: %s", dest);
+}

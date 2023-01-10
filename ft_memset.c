@@ -15,18 +15,17 @@
 void    *ft_memset(void *b, int c, size_t len)
 {
     size_t  i;
-    unsigned char *d;
+  
+    if (b == NULL)
+        return (NULL);
 
     i = 0;
-    d = (unsigned char *)b;
-
     while (i < len)
     {
-        d[i] = c;
-
+        ((unsigned char *)b)[i] = c;
+        i++;
     }
     return (b);
-
 }
 
 
@@ -36,6 +35,27 @@ void    *ft_memset(void *b, int c, size_t len)
 int main()
 {
     char str[] = "Hello";
-    printf("%s\n", ft_memset(str, '$', 2));
-    printf("%s\n", memset(str, '$', 2));
+    printf("Normal String = %s\n", str);
+    memset(str, '!', 2);
+    printf("Str after memset = %s\n", str);
+    ft_memset(str, '!', 2);
+    printf("Str after my function memset = %s\n", str);
+
+    int s[] = {1,2,3,4,5,6,7,8};
+    int i = 0;
+    memset(s, 1 , 4);
+    printf("Avec la fonction :\n");
+    while (i < 8)
+    {
+        printf("%d\n", s[i]);
+        i++;
+    }
+    i = 0;
+    ft_memset(s, 1, 4);
+    printf("With my function: \n");
+    while (i < 8)
+    {
+        printf("%d\n", s[i]);
+        i++;
+    }  
 }

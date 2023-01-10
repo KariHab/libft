@@ -14,6 +14,18 @@ int	ft_tolower(int c)
 {
 	if (c >='A' && c <= 'Z')
 		return (c + 32);
-	else 
-		return (c);
+	return (c);
+}
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main ()
+{
+	int c = 'A';
+	int d = 'c';
+	printf("%c\n", (ft_tolower(c)));
+	printf("%c\n", tolower(c));
+	printf("%c\n", ft_tolower(d));
+	printf("%c\n", tolower(d));
 }

@@ -14,7 +14,18 @@ int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
-	else
-		return(c);
+	return(c);
 }
 
+#include <stdio.h>
+#include <ctype.h>
+
+int main ()
+{
+	int c = 'A';
+	int d = 'c';
+	printf("%c\n", (ft_toupper(c)));
+	printf("%c\n", toupper(c));
+	printf("%c\n", ft_toupper(d));
+	printf("%c\n", toupper(d));
+}
