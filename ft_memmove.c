@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <unistd.h>
+#include "libft.h"
 
 void    *ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -34,9 +33,6 @@ void    *ft_memmove(void *dst, const void *src, size_t len)
         }
     return(dst);
 }
-
-#include <stdio.h>
-#include <string.h>
 
 int main() 
 { 

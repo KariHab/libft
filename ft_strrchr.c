@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#include <unistd.h>
 size_t	ft_strlen(const char *s)
 {
 	int	i;
@@ -41,9 +41,6 @@ char    *ft_strrchr(const char *s, int c)
     return (NULL);
 }
 
-
-#include <string.h>
-#include <stdio.h>
 
 int main ()
 {

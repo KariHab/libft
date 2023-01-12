@@ -38,9 +38,6 @@ int ft_atoi(const char *str)
     return (result * sign);
 }
 
-#include <stdlib.h>
-#include <stdio.h>
-
 int main ()
 {
     char a [] = " -1234djdgvujgf";

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void    *ft_memset(void *b, int c, size_t len)
 {
@@ -27,10 +27,6 @@ void    *ft_memset(void *b, int c, size_t len)
     }
     return (b);
 }
-
-
-#include <string.h>
-#include <stdio.h>
 
 int main()
 {

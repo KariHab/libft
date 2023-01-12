@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <unistd.h>
+#include "libft.h"
 
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -32,10 +31,6 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
     return (0);
     
 }
-
-
-#include <string.h>
-#include <stdio.h>
 
 int main ()
 {
