@@ -10,41 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-size_t	ft_strlen(const char *str)
-{
-	int i;
+// size_t	ft_strlen(const char *str)
+// {
+// 	int i;
 
-	i = 0;
-	while (str && str[i])
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	while (str && str[i])
+// 		i++;
+// 	return (i);
+// }
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
 
-    j = ft_strlen(dst);
+	j = ft_strlen(dst);
 	i = 0;
-    if (dst == NULL || src == NULL)
+	if (dst == NULL || src == NULL)
 		return (0);
-
 	if (dstsize <= j)
-        return (ft_strlen(src) + dstsize);
-
-	while (src[i] && j + i < (dstsize -1))
-		{
-			dst[j + i] = src[i];
-			i++;
-		}
-		dst[j + i] = '\0';
+		return (ft_strlen(src) + dstsize);
+	while (src[i] && j + i < (dstsize - 1))
+	{
+		dst[j + i] = src[i];
+		i++;
+	}
+	dst[j + i] = '\0';
 	return (j + ft_strlen(src));
 }
 
-
+/*
 int main ()
 {
 	char src [] = "Hello";
@@ -52,3 +49,4 @@ int main ()
 	ft_strlcat(dest, src, 8);
 	printf("Copied array is: %s", dest);
 }
+*/

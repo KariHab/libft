@@ -1,23 +1,22 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/12 15:07:21 by khabbout          #+#    #+#             */
+/*   Updated: 2023/01/12 15:07:21 by khabbout         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-
-size_t	ft_strlen(const char *s)
-{
-	static int i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
 static char	*ft_strrev(char *str)
 {
-	int i;
-	int len;
-	int tmp;
+	int	i;
+	int	len;
+	int	tmp;
 
 	i = 0;
 	len = ft_strlen(str) - 1;
@@ -34,12 +33,12 @@ static char	*ft_strrev(char *str)
 
 char	*ft_itoa(int nbr)
 {
-	int i;
-	int neg;
-	char *tmp;
+	int		i;
+	int		negative;
+	char	*tmp;
 
 	i = 0;
-	neg = 0;
+	negative = 0;
 	tmp = malloc(sizeof(char) * 12);
 	if (tmp == NULL)
 		return (NULL);
@@ -49,7 +48,7 @@ char	*ft_itoa(int nbr)
 		return ("-2147483648");
 	if (nbr < 0)
 	{
-		neg = 1;
+		negative = 1;
 		nbr *= -1;
 	}
 	while (nbr)
@@ -57,12 +56,13 @@ char	*ft_itoa(int nbr)
 		tmp[i++] = (nbr % 10) + '0';
 		nbr /= 10;
 	}
-	if (neg)
+	if (negative)
 		tmp[i] = '-';
-	return ft_strrev(tmp);
+	return (ft_strrev(tmp));
 }
 
-int	main(void)
+/*
+int	main()
 {
 	int i = 0;
 	int tab[5] = {-2147483648, -42, 0, 42, 2147483647};
@@ -70,3 +70,4 @@ int	main(void)
 	while (i < 5)
 		printf("%s\n", ft_itoa(tab[i++]));
 }
+*/

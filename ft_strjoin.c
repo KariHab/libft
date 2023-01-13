@@ -1,56 +1,52 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/12 14:43:59 by khabbout          #+#    #+#             */
+/*   Updated: 2023/01/12 14:43:59 by khabbout         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
-size_t	ft_strlen(const char *s)
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	char	*newstr;
+	size_t	i;
+	size_t	j;
 
-	i = 0;
-	while (s && s[i])
-		i++;
-	return (i);
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	newstr = malloc(sizeof(char) * ((ft_strlen(s1) + ft_strlen(s2)) + 1));
+	if (newstr == NULL)
+		return (NULL);
+	else
+	{
+		i = 0;
+		j = 0;
+		while (s1[j])
+		{
+			newstr[i++] = s1[j++];
+		}
+		j = 0;
+		while (s2[j])
+		{
+			newstr[i++] = s2[j++];
+		}
+		newstr[i] = '\0';
+	}
+	return (newstr);
 }
-
-char *ft_strjoin(char const *s1, char const *s2)
-{
-    char *newstr;
-    size_t i;
-    size_t j;
-
-    if (s1 == NULL || s2 == NULL)
-        return (NULL);
-
-    newstr = malloc (sizeof(char)*((ft_strlen(s1)+ft_strlen(s2)) + 1));
-    if (newstr == NULL)
-        return (NULL);
-    else
-    {
-        i = 0;
-        j = 0;
-        while (s1[j])
-        {
-       
-            newstr[i++] = s1[j++];
-            //j++;
-            //i++;
-        }
-        j = 0;
-        while (s2[j])
-        {
-            newstr[i++] = s2[j++];
-            //j++;
-            //i++;
-        }
-        newstr[i] = '\0';
-    }
-    return (newstr);
-}
-
+/*
 int main()
 {
-    char s1[] = "La vie c'est comme ";
-    char s2[] = "une boite de chocolat";
+	char s1[] = "La vie c'est comme ";
+	char s2[] = "une boite de chocolat";
 
-    char *newstr = ft_strjoin(s1, s2);
-    printf("%s\n",  newstr);
+	char *newstr = ft_strjoin(s1, s2);
+	printf("%s\n",  newstr);
 }
+*/

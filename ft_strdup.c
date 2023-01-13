@@ -6,7 +6,7 @@
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:31:37 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/10 14:32:01 by khabbout         ###   ########.fr       */
+/*   Updated: 2023/01/12 20:58:00 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strdup(const char *s1)
 {
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 	char	*copy;
 
 	len = 0;
 	while (s1[len])
 		len++;
-	copy = malloc (len + 1);
+	copy = malloc(len + 1);
 	if (copy != NULL)
 	{
 		i = 0;
@@ -34,3 +34,12 @@ char	*ft_strdup(const char *s1)
 	}
 	return (copy);
 }
+
+/*
+int main ()
+{
+	
+	char s [] = "Truc";
+	printf("%s\n", ft_strdup(s));
+}
+*/
