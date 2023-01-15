@@ -10,80 +10,91 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-// #include "libft.h"
+static void	ft_free(char **p)
+{
+	int	i;
 
-// #include "libft.h"
+	i = 0;
+	while (p[i])
+	{
+		free(p[i]);
+		i++;
+	}
+	free(p);
+}
 
-// static int	count_words(const char *str, char c)
+static int	count_word(const char *s, char c)
+{
+	int	i;
+	int	counter;
+
+	i = 0;
+	counter = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i])
+			counter++;
+		while (s[i] && s[i] != c)
+			i++;
+	}
+	return (counter);
+}
+
+static char	*ft_memory(const char *str, char c)
+{
+	size_t	i;
+	char	*newstr;
+
+	i = 0;
+	while (str[i] && str[i] != c)
+		i++;
+	newstr = ft_calloc(i + 1, sizeof(char));
+	if (newstr == NULL)
+		return (NULL);
+	while (i--)
+		newstr[i] = str[i];
+	return (newstr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**tab;
+	size_t	i;
+	size_t	word;
+
+	i = 0;
+	word = 0;
+	if (s == NULL)
+		return (NULL);
+	tab = (char **)ft_calloc(count_word(s, c) + 1, sizeof(char *));
+	if (tab == NULL)
+		return (NULL);
+	while (count_word(s + i, c))
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		tab[word] = ft_memory(s + i, c);
+		if (tab[word++] == NULL)
+			return(ft_free(tab), NULL);
+		while (s[i] && s[i] != c)
+			i++;
+	}
+	return (tab);
+}
+
+
+// int main ()
 // {
-// 	int i;
-// 	int trigger;
+//     char s[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
+// 	char *tab = *ft_split(s, 32);
 
-// 	i = 0;
-// 	trigger = 0;
-// 	while (*str)
+// 	while (tab)
 // 	{
-// 		if (*str != c && trigger == 0)
-// 		{
-// 			trigger = 1;
-// 			i++;
-// 		}
-// 		else if (*str == c)
-// 			trigger = 0;
-// 		str++;
+// 		printf("%s\n", tab);
+// 		tab = *ft_split(NULL, 32);
 // 	}
-// 	return (i);
-// }
-
-// static char	*word_dup(const char *str, int start, int finish)
-// {
-// 	char	*word;
-// 	int		i;
-
-// 	i = 0;
-// 	word = malloc((finish - start) * sizeof(char));
-// 	while (start < finish)
-// 		word[i++] = str[start++];
-// 	word[i] = '\0';
-// 	return (word);
-// }
-
-// char		**ft_split(char const *s, char c)
-// {
-// 	size_t	i;
-// 	size_t	j;
-// 	int		index;
-// 	char	**split;
-
-// 	if (!s || !(split = malloc((count_words(s, c) + 1) * sizeof(char *))))
-// 		return (0);
-// 	i = 0;
-// 	j = 0;
-// 	index = -1;
-// 	while (i <= ft_strlen(s))
-// 	{
-// 		if (s[i] != c && index < 0)
-// 			index = i;
-// 		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
-// 		{
-// 			split[j++] = word_dup(s, index, i);
-// 			index = -1;
-// 		}
-// 		i++;
-// 	}
-// 	split[j] = 0;
-// 	return (split);
-// // }
-
-// #include "libft.h"
-
-// static void	ft_allfree(char **p)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (p[i])
-// 		free(p[i++]);
-// 	free(p);
 // }

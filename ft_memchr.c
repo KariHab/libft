@@ -29,6 +29,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 }
 
 /*
+#include <string.h>
 int main()
 {
 	char str[] = "Hello";

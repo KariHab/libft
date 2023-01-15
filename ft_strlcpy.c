@@ -6,21 +6,11 @@
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:31:41 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/12 20:22:21 by khabbout         ###   ########.fr       */
+/*   Updated: 2023/01/14 14:33:51 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// size_t	ft_strlen(const char *str)
-// {
-// 	int i;
-
-// 	i = 0;
-// 	while (str && str[i])
-// 		i++;
-// 	return (i);
-// }
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

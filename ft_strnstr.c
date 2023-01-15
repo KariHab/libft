@@ -20,12 +20,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	if (haystack == NULL || needle == NULL)
 		return (NULL);
 	i = 0;
-	j = 0;
-	if (needle[j] == '\0')
+	if (*needle == 0)
 		return ((char *)haystack);
-	while (haystack[i] != '\0' && i < len)
+	while (haystack[i] && i < len)
 	{
-		while (haystack[i + j] == needle[j] && haystack[i + j] != '\0')
+		j = 0;
+		while (haystack[i + j] == needle[j] && i + j < len)
 		{
 			j++;
 			if (needle[j] == '\0')
@@ -39,10 +39,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 /*
 int main ()
 {
-	char str[] = "Je suis Karima et j'aime le code";
-	char find[] = "suis";
+	char str[] = "lorem ipsum dolor sit amet";
+	char find[] = "ipsumm";
 
-	printf("%s\n", ft_strnstr(str, find, 20));
+	printf("%s\n", ft_strnstr(str, find, 30));
 
 }
 */

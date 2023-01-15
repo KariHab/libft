@@ -1,136 +1,62 @@
 
-# NAME = libft.a
-# SRCS =   ft_atoi.c \
-#         ft_bzero.c \
-#         ft_calloc.c \
-# 		ft_isalnum.c \
-# 		ft_isalpha.c \
-# 		ft_isascii.c \
-# 		ft_isdigit.c \
-# 		ft_isprint.c \
-# 		ft_itoa.c \
-# 		ft_memchr.c \
-# 		ft_memcmp.c \
-# 		ft_memmove.c \
-# 		ft_putchar_fd.c \
-# 		ft_putendl_fd.c \
-# 		ft_putnbr_fd.c \
-# 		ft_putstr_fd.c \
-# 		ft_split.c \
-# 		ft_strchr.c \
-# 		ft_strdup.c \
-# 		ft_striteri.c \
-# 		ft_strjoin.c \
-# 		ft_strlcat.c \
-# 		ft_strlcpy.c \
-# 		ft_strlen.c \
-# 		ft_strmapi.c \
-# 		ft_strncmp.c \
-# 		ft_strnstr.c \
-# 		ft_strrchr.c \
-# 		ft_strtrim.c \
-# 		ft_substr.c \
-# 		ft_tolower.c \
-# 		ft_toupper.c
+NAME = libft.a
 
-# OBJ = $(SRCS:%.c=%.o)
-# MAIN = test
-# CC = gcc
-# CFLAGS = -Wall -Werror -Wextra
-# all : $(NAME)
-# $(NAME) : $(OBJ)
-#     ar -rcs $(NAME) $(OBJ)
-# clean :
-#     rm -f $(OBJ)
-# re : clean
-#     make
-# $(MAIN): $(NAME)
-#     $(CC) $(CFLAGS) $(NAME) main.c -o test
-# fclean : clean
-#     rm -f $(NAME)
-# exe : $(MAIN)
-#     ./test
+# le compilateur et les flags pour compiler
+CC		=	gcc
+CFLAGS	=	-Wall -Werror -Wextra
+RM		=	rm -f
 
+# Sources are all .c files
+SRCS =  ft_atoi.c\
+		ft_bzero.c\
+		ft_calloc.c\
+		ft_isalnum.c\
+		ft_isalpha.c\
+		ft_isascii.c\
+		ft_isdigit.c\
+		ft_isprint.c\
+		ft_itoa.c\
+		ft_memchr.c\
+		ft_memcmp.c\
+		ft_memcpy.c\
+		ft_memmove.c\
+		ft_memset.c\
+		ft_putchar_fd.c\
+		ft_putendl_fd.c\
+		ft_putnbr_fd.c\
+		ft_putstr_fd.c\
+		ft_split.c\
+		ft_strchr.c\
+		ft_strdup.c\
+		ft_striteri.c\
+		ft_strjoin.c\
+		ft_strlcat.c\
+		ft_strlcpy.c\
+		ft_strlen.c\
+		ft_strmapi.c\
+		ft_strncmp.c\
+		ft_strnstr.c\
+		ft_strrchr.c\
+		ft_strtrim.c\
+		ft_substr.c\
+		ft_tolower.c\
+		ft_toupper.c
 
-# NAME	=	libft.a
+OBJS	=	$(SRCS:.c=.o)
 
-# # Compiler and flags
-# CC		=	gcc
-# CFLAGS	=	-Wall -Werror -Wextra
-# RM		=	rm -f
+all: $(NAME)
 
-# # Sources are all .c files
-# SRCS	=	ft_atoi.c\
-# 			ft_bzero.c\
-# 			ft_calloc.c\
-# 			ft_isalnum.c\
-# 			ft_isalpha.c\
-# 			ft_isascii.c\
-# 			ft_isdigit.c\
-# 			ft_isprint.c\
-# 			ft_itoa.c\
-# 			ft_memchr.c\
-# 			ft_memcmp.c\
-# 			ft_memcpy.c\
-# 			ft_memmove.c\
-# 			ft_memset.c\
-# 			ft_putchar_fd.c\
-# 			ft_putendl_fd.c\
-# 			ft_putnbr_fd.c\
-# 			ft_putstr_fd.c\
-# 			ft_split.c\
-# 			ft_strchr.c\
-# 			ft_strdup.c\
-# 			ft_striteri.c\
-# 			ft_strjoin.c\
-# 			ft_strlcat.c\
-# 			ft_strlcpy.c\
-# 			ft_strlen.c\
-# 			ft_strmapi.c\
-# 			ft_strncmp.c\
-# 			ft_strnstr.c\
-# 			ft_strrchr.c\
-# 			ft_strtrim.c\
-# 			ft_substr.c\
-# 			ft_tolower.c\
-# 			ft_toupper.c\
-# 			ft_safe_free.c\
-# 			ft_realloc.c\
-# 			get_next_line.c\
-# 			get_next_line_utils.c
+# Pour obtenir les .o de chaque .c 
+$(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
-# OBJS	=	$(SRCS:.c=.o)
-# # BSources are all .c files
-# BSRCS	=	ft_lstnew.c\
-# 			ft_lstadd_front.c\
-# 			ft_lstsize.c\
-# 			ft_lstlast.c\
-# 			ft_lstadd_back.c\
-# 			ft_lstdelone.c\
-# 			ft_lstclear.c\
-# 			ft_lstiter.c\
-# 			ft_lstmap.c
+# Pour supprimer les .o qu' on a genere
+clean:
+	$(RM) $(OBJS) $(BOBJS)
 
-# BOBJS	=	$(BSRCS:.c=.o)
+# on clean tout donc .o et les exe
+fclean: clean
+	$(RM) $(NAME)
 
-# all: $(NAME)
-
-# # Generates output file
-# $(NAME): $(OBJS)
-# 	ar -rcs $(NAME) $(OBJS)
-
-# bonus: $(BOBJS)
-# 	ar -rs $(NAME) $(BOBJS)
-
-# $(BOBJS): $(BSRCS)
-# 	$(CC) $(CFLAGS) -c $(BSRCS)
-# # Removes objects
-# clean:
-# 	$(RM) $(OBJS) $(BOBJS)
-
-# # Removes objects and executables
-# fclean: clean
-# 	$(RM) $(NAME)
-
-# # Removes objects and executables and remakes
-# re: fclean all
+# pour remake qui serviera pour debbuger si besoin 
+re: fclean all

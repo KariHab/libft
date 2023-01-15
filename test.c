@@ -1,100 +1,94 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/14 16:05:15 by khabbout          #+#    #+#             */
+/*   Updated: 2023/01/14 19:14:41 by khabbout         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+#include <unistd.h>
 
-
-//trouver le char delimiteur 
-static int separator(char c, const char *set)
-{
-    size_t i;
-
-    i = 0;
-    while (set[i])
-    {
-        if (set[i] == c)
-            return(1);
-        i++;
-    }
-    return(0);
-}
-
-//count the number of words qu'on a dans notre str en fonction du delimiteur
-int	count_words(char *str, char *set)
+static void	ft_allfree(char **p)
 {
 	int	i;
-	int	count;
 
-	count = 0;
 	i = 0;
-    if(str == NULL || set == NULL)
-        return(NULL);
+	while (p[i])
+		free(p[i++]);
+	free(p);
+}
+
+static int	nb_word(const char *str, char c)
+{
+	int	i;
+	int	size;
+
+	i = 0;
+	size = 0;
 	while (str[i])
 	{
-		while (str[i] && separator(str[i], set)) // tant que on a p
+		while (str[i] && str[i] == c)
 			i++;
 		if (str[i])
-			count++;
-		while (str[i] && (separator(str[i], set) == 0))
+			size++;
+		while (str[i] && str[i] != c)
 			i++;
 	}
-	return (count);
+	return (size);
 }
 
-//pour avoir la taille des str entre les delimiteur 
-// tant que tu as pas trouve le delimiteur increment pour la longueur 
-int	ft_strlen_sep(char *str, char *set)
+static char	*ft_strdup_c(const char *str, char c)
 {
-	int	i;
+	size_t	i;
+	char	*new;
 
 	i = 0;
-	while (str[i] && is_in_set(str[i], set) == 0)
+	while (str[i] && str[i] != c)
 		i++;
-	return (i);
+	new = ft_calloc(i + 1, sizeof(char));
+	if (!new)
+		return (NULL);
+	while (i--)
+		new[i] = str[i];
+	return (new);
 }
 
-//pour stocker les mots entre chaque delimiteur 
-char	*ft_word(char *str, char *set)
+char	**ft_split(char const *s, char c)
 {
-	int		len;
-	int		i;
-	char	*word;
+	char	**new;
+	size_t	i;
+	size_t	index;
 
 	i = 0;
-	len = ft_strlen_sep(str, set);
-	word = (char *)malloc(sizeof(char) * (len + 1));
-	while (i < len)
+	index = 0;
+	if (!s)
+		return (NULL);
+	new = (char **)ft_calloc(nb_word(s, c) + 1, sizeof(char *));
+	if (!new)
+		return (NULL);
+	while (nb_word(s + i, c))
 	{
-		word[i] = str[i];
-		i++;
-	}
-	word[i] = '\0';
-	return (word);
-}
-
-char	**ft_split(char *str, char *set)
-{
-	char	**strings;
-	int		i;
-
-	i = 0;
-	strings = (char **)malloc(sizeof(char *) * (count_words(str, set) + 1));
-	while (*str)
-	{
-		while (*str  && is_in_set(*str, set))
-			str++;
-		if (*str)
-		{
-			strings[i] = ft_word(str, set);
+		while (s[i] && s[i] == c)
 			i++;
-		}
-		while (*str && is_in_set(*str, set) == 0)
-			str++;
+		new[index] = ft_strdup_c(s + i, c);
+		if (!new[index++])
+			return (ft_allfree(new), NULL);
+		while (s[i] && s[i] != c)
+			i++;
 	}
-	strings[i] = 0;
-	return (strings);
+	return (new);
 }
 
-//free la memoire appres
-
-int main()
+int main ()
 {
-
+    char s[] = "Manger des pommes c'est cool";
+    printf(" %d", count_word(s, 32));
+    
 }
+
+

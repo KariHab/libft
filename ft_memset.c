@@ -6,7 +6,7 @@
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:59:24 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/12 19:55:47 by khabbout         ###   ########.fr       */
+/*   Updated: 2023/01/14 14:33:12 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,15 @@ void	*ft_memset(void *b, int c, size_t len)
 }
 
 /*
+#include <string.h>
+
 int main()
 {
 	char str[] = "Hello";
 	printf("Normal String = %s\n", str);
-	memset(str, '!', 2);
+	memset(str, 65, 2);
 	printf("Str after memset = %s\n", str);
-	ft_memset(str, '!', 2);
+	ft_memset(str, 65, 2);
 	printf("Str after my function memset = %s\n", str);
 
 	int s[] = {1,2,3,4,5,6,7,8};

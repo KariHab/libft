@@ -6,7 +6,7 @@
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:31:33 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/12 19:41:32 by khabbout         ###   ########.fr       */
+/*   Updated: 2023/01/13 20:17:13 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int main()
 	printf("%d\n", ft_isprint('a'));
 	printf("%d\n", ft_isprint('\b'));
 	printf("%d\n", ft_isprint(' '));
-	printf("%d\n", ft_isprint('\t'));
+	printf("%d\n", ft_isprint('\n'));
 }
 */

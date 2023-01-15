@@ -23,15 +23,11 @@ size_t	ft_strlen(const char *s)
 }
 
 /*
-#include <stdlib.h>
-#include <stdio.h>
 int main(void)
 {
 	char a[] = "Hello";
 	char b[] = "";
-	printf("%d\n", ft_strlen(a));
-	printf("%d\n", ft_strlen(b));
-
-	return (0);
+	printf("%zu\n", ft_strlen(a));
+	printf("%zu\n", ft_strlen(b));
 }
 */

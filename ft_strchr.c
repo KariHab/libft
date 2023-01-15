@@ -15,11 +15,13 @@
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
+	int	len;
 
 	i = 0;
+	len = ft_strlen(s);
 	if (s == NULL)
 		return (NULL);
-	while (s)
+	while (i <= len)
 	{
 		if (((char *)s)[i] == (char)c)
 			return (((char *)s) + i);
@@ -32,7 +34,6 @@ char	*ft_strchr(const char *s, int c)
 int main()
 {
 	char str[] = "AHelloa";
-	printf("%s", ft_strchr(str, 'A'));
-	// printf("\n%s", strchr(str, '\0'));
+	printf("%s", ft_strchr(str, '\0'));
 }
 */
