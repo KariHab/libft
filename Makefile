@@ -52,7 +52,7 @@ $(NAME): $(OBJS)
 
 # Pour supprimer les .o qu' on a genere
 clean:
-	$(RM) $(OBJS) $(BOBJS)
+	$(RM) $(OBJS)
 
 # on clean tout donc .o et les exe
 fclean: clean

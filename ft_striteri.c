@@ -25,3 +25,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		i++;
 	}
 }
+
+// int main ()
+// {
+// 	char s [] = "Hello";
+// 	printf("%s\n", ft_striteri(s, &ft_toupper));
+// }
