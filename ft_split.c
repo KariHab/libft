@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-static int count_word(const char *s, char c)
+static int	count_word(const char *s, char c)
 {
-	int i;
-	int counter;
+	int	i;
+	int	counter;
 
 	i = 0;
 	counter = 0;
@@ -31,10 +31,10 @@ static int count_word(const char *s, char c)
 	return (counter);
 }
 
-static char *ft_memory(const char *str, char c)
+static char	*ft_memory(const char *str, char c)
 {
-	size_t i;
-	char *newstr;
+	size_t	i;
+	char	*newstr;
 
 	i = 0;
 	while (str[i] && str[i] != c)
@@ -47,24 +47,11 @@ static char *ft_memory(const char *str, char c)
 	return (newstr);
 }
 
-static void ft_free(char **word)
+char	**ft_split(char const *s, char c)
 {
-	int i;
-
-	i = 0;
-	while (word[i])
-	{
-		free(word[i]);
-		i++;
-	}
-	free(word);
-}
-
-char **ft_split(char const *s, char c)
-{
-	char **tab;
-	size_t i;
-	size_t word;
+	char	**tab;
+	size_t	i;
+	size_t	word;
 
 	i = 0;
 	word = 0;
@@ -79,7 +66,7 @@ char **ft_split(char const *s, char c)
 			i++;
 		tab[word] = ft_memory(s + i, c);
 		if (tab[word++] == NULL)
-			return (ft_free(tab), NULL);
+			return (NULL);
 		while (s[i] && s[i] != c)
 			i++;
 	}
@@ -88,7 +75,8 @@ char **ft_split(char const *s, char c)
 
 // int main()
 // {
-// 	char s[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
+// 	char s[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+//				Sed non risus. Suspendisse";
 // 	char **tab;
 // 	int i;
 

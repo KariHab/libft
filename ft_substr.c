@@ -15,32 +15,26 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	char	*newstr;
+	char	*str;
 
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	newstr = malloc(sizeof(char) * (len + 1));
-	if (newstr == NULL)
+	str = ft_calloc(len * sizeof(char) + 1, 1);
+	if (str == NULL)
 		return (NULL);
-	while (start < ft_strlen(s) && i < len)
+	while (start < ft_strlen(s) && i < len && s[i])
 	{
-		newstr[i] = s[i + start];
+		str[i] = s[i + start];
 		i++;
 	}
-	newstr[i] = '\0';
-	return (newstr);
+	return (str);
 }
 
-/*
-int main()
-{
-	char str[] = " ";
+// int main()
+// {
+// 	char str[] = "Manger des pommes dans la vie";
 
-	int start = 400;
-	int len = 20;
-
-	char *newstr = ft_substr(str, start, len);
-	printf("%s\n",  newstr);
-}
-*/
+// 	char *newstr = ft_substr(str, 0, -1);
+// 	printf("%s\n",  newstr);
+// }
