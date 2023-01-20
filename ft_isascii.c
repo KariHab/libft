@@ -6,7 +6,7 @@
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:31:23 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/13 20:16:18 by khabbout         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:19:47 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,3 @@ int	ft_isascii(int c)
 		return (1);
 	return (0);
 }
-
-/*
-#include <stdio.h>
-int main()
-{
-	printf("%d\n", ft_isascii(' '));
-	printf("%d\n", ft_isascii('2'));
-	printf("%d\n", ft_isascii(2));
-	printf("%d\n", ft_isascii('a'));
-}*/

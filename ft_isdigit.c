@@ -6,7 +6,7 @@
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:31:28 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/14 14:32:11 by khabbout         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:19:49 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,3 @@ int	ft_isdigit(int c)
 		return (c);
 	return (0);
 }
-
-/*
-#include <stdio.h>
-int main()
-{
-	printf("%d\n", ft_isdigit('a'));
-	printf("%d\n", ft_isdigit('2'));
-	printf("%d\n", ft_isdigit(' '));
-	printf("%d\n", ft_isdigit('3'));
-}
-*/

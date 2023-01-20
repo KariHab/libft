@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+/*find the first occurence of a char in a str*/
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
@@ -29,11 +30,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-/*
-int main()
-{
-	char str[] = "AHelloa";
-	printf("%s", ft_strchr(str, '\0'));
-}
-*/

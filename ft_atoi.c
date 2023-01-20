@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+/*convert a char to an int*/
 int	ft_atoi(const char *str)
 {
 	int	i;
@@ -40,13 +41,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-
-/*
-int main ()
-{
-	char a [] = " -1234djdgvujgf";
-	printf("%d\n", ft_atoi(a));
-	printf("%d\n", atoi(a));
-
-}
-*/

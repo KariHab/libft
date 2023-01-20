@@ -6,7 +6,7 @@
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:31:05 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/14 14:31:14 by khabbout         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:19:43 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,3 @@ int	ft_isalpha(int c)
 		return (c);
 	return (0);
 }
-
-/*
-#include <stdio.h>
-int main()
-{
-	printf("%d\n", ft_isalpha('a'));
-	printf("%d\n", ft_isalpha('1'));
-	printf("%d\n", ft_isalpha('.'));
-	printf("%d\n", ft_isalpha('A'));
-}
-*/

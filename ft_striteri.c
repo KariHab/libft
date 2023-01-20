@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+/*apply a function over each char of a str*/
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
@@ -25,9 +26,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		i++;
 	}
 }
-
-// int main ()
-// {
-// 	char s [] = "Hello";
-// 	printf("%s\n", ft_striteri(s, &ft_toupper));
-// }

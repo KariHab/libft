@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+/*append a desired len of src at the end of dest*/
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
@@ -31,13 +32,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[j + i] = '\0';
 	return (j + ft_strlen(src));
 }
-
-/*
-int main ()
-{
-	char src [] = "Hello";
-	char dest [] = "Truc";
-	ft_strlcat(dest, src, 8);
-	printf("Copied array is: %s", dest);
-}
-*/

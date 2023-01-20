@@ -72,20 +72,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (tab);
 }
-
-// int main()
-// {
-// 	char s[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-//				Sed non risus. Suspendisse";
-// 	char **tab;
-// 	int i;
-
-// 	tab = ft_split(s, ' ');
-// 	i = 0;
-
-// 	while (tab[i])
-// 	{
-// 		printf("%s\n", tab[i]);
-// 		i++;
-// 	}
-// }

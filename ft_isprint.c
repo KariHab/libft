@@ -6,7 +6,7 @@
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:31:33 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/13 20:17:13 by khabbout         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:19:50 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,3 @@ int	ft_isprint(int c)
 		return (c);
 	return (0);
 }
-
-/*
-#include <stdio.h>
-int main()
-{
-	printf("%d\n", ft_isprint('2'));
-	printf("%d\n", ft_isprint('a'));
-	printf("%d\n", ft_isprint('\b'));
-	printf("%d\n", ft_isprint(' '));
-	printf("%d\n", ft_isprint('\n'));
-}
-*/

@@ -58,5 +58,5 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-# pour remake qui serviera pour debbuger si besoin 
+# pour remake qui servira pour debbuger si besoin 
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:31:16 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/14 14:31:02 by khabbout         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:19:40 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,3 @@ int	ft_isalnum(int c)
 		return (c);
 	return (0);
 }
-
-/*
-#include <stdio.h>
-int main ()
-{
-	printf("%d\n", ft_isalnum('a'));
-	printf("%d\n", ft_isalnum('9'));
-	printf("%d\n", ft_isalnum('.'));
-	printf("%d\n", ft_isalnum(' '));
-}
-*/

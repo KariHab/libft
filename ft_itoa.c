@@ -27,6 +27,7 @@ static int	get_size(int n)
 	return (size);
 }
 
+/*convert an int to a char*/
 char	*ft_itoa(int nbr)
 {
 	char		*tmp;
@@ -54,12 +55,3 @@ char	*ft_itoa(int nbr)
 	}
 	return (tmp);
 }
-
-// int main()
-// {
-// 	int i = 0;
-// 	int tab[5] = {-2147483648, -42, 0, 42, 2147483647};
-
-// 	while (i < 5)
-// 		printf("%s\n", ft_itoa(tab[i++]));
-// }

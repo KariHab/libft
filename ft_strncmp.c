@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+/*compare two str over a desired size*/
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
@@ -23,24 +24,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
-
-/*
-#include <string.h>
-int main ()
-{
-	char s1[] = "test\200";
-	char s2[] = "test\0";
-	char s3[] = "Hella";
-	char s4[] = "hsghcvo";
-	printf("%d\n", ft_strncmp(s1, s2, 6));
-	printf("%d\n", strncmp(s1, s2, 6));
-
-	printf("%d\n", ft_strncmp(s1, s3, 8));
-	printf("%d\n", strncmp(s1, s3, 8));
-
-	printf("%d\n", ft_strncmp(s1, s4, 8));
-	printf("%d\n", strncmp(s1, s4, 8));
-
-	printf("%d", ft_strncmp("test\200", "test\0", 6));
-}
-*/

@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+/*find a char in memory*/
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
@@ -27,15 +28,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-/*
-#include <string.h>
-int main()
-{
-	char str[] = "Hello";
-	char *ptr = memchr(str, 'e', 5);
-	printf("After memchr: %s\n", ptr);
-	char *ptr2 = ft_memchr(str, 'e', 5);
-	printf("After my function: %s\n", ptr2);
-}
-*/

@@ -40,13 +40,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	return (newstr);
 }
-/*
-int main()
-{
-	char s1[] = "La vie c'est comme ";
-	char s2[] = "une boite de chocolat";
-
-	char *newstr = ft_strjoin(s1, s2);
-	printf("%s\n",  newstr);
-}
-*/

@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+/*create and return a copy of str modified by a function*/
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;

@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+/*find the last occurence of a char in a str*/
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
@@ -27,13 +28,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-/*
-int main ()
-{
-	char str [] = "AaHelloa";
-	printf("%s", ft_strrchr(str, 'H'));
-	printf("\n%s", strrchr(str, 'H'));
-
-}
-*/

@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+/*copy a substring of a str into another memory block*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
@@ -20,21 +21,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	str = ft_calloc(len * sizeof(char) + 1, 1);
+	if (start < ft_strlen(s))
+		while (s[i + start] && len > i)
+			i++;
+	str = ft_calloc(i * sizeof(char) + 1, 1);
 	if (str == NULL)
 		return (NULL);
-	while (start < ft_strlen(s) && i < len && s[i])
-	{
-		str[i] = s[i + start];
-		i++;
-	}
+	if (start >= ft_strlen(s))
+		return (str);
+	ft_strlcpy(str, s + start, i + 1);
 	return (str);
 }
-
-// int main()
-// {
-// 	char str[] = "Manger des pommes dans la vie";
-
-// 	char *newstr = ft_substr(str, 0, -1);
-// 	printf("%s\n",  newstr);
-// }

@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+/*find a needle in a haystack with a desired len*/
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
@@ -35,14 +36,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-/*
-int main ()
-{
-	char str[] = "lorem ipsum dolor sit amet";
-	char find[] = "ipsumm";
-
-	printf("%s\n", ft_strnstr(str, find, 30));
-
-}
-*/

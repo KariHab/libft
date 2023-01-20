@@ -36,12 +36,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd((n + 48), fd);
 	}
 }
-
-/*
-int main (void)
-{
-	ft_putnbr_fd(5684, 1);
-	write(1, "\n", 1);
-	ft_putnbr_fd(42, 1);
-}
-*/

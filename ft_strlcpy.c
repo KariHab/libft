@@ -6,12 +6,13 @@
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:31:41 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/14 14:33:51 by khabbout         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:20:32 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*copy a desired len of src to dest*/
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
@@ -32,13 +33,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (j);
 }
-
-/*
-int main ()
-{
-	char src [] = "Hello je suis Karima";
-	char dest [5];
-	ft_strlcpy(dest, src, 10);
-	printf("Copied array is: %s", dest);
-}
-*/
