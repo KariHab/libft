@@ -1,7 +1,6 @@
-
 NAME = libft.a
 
-# le compilateur et les flags pour compiler
+# compile and flags
 CC		=	gcc
 CFLAGS	=	-Wall -Werror -Wextra
 RM		=	rm -f
@@ -46,17 +45,16 @@ OBJS	=	$(SRCS:.c=.o)
 
 all: $(NAME)
 
-# Pour obtenir les .o de chaque .c 
+# Create and Index in archive 
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
-# Pour supprimer les .o qu' on a genere
+# clean o created
 clean:
 	$(RM) $(OBJS)
 
-# on clean tout donc .o et les exe
+# clean o created and exe
 fclean: clean
 	$(RM) $(NAME)
 
-# pour remake qui servira pour debbuger si besoin 
 re: fclean all

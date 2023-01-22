@@ -47,6 +47,16 @@ static char	*ft_memory(const char *str, char c)
 	return (newstr);
 }
 
+static void	ft_free_memory(char **ptr)
+{
+	int	i;
+
+	i = 0;
+	while (ptr[i])
+		free(ptr[i++]);
+	free(ptr);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
@@ -66,7 +76,7 @@ char	**ft_split(char const *s, char c)
 			i++;
 		tab[word] = ft_memory(s + i, c);
 		if (tab[word++] == NULL)
-			return (NULL);
+			return (ft_free_memory(tab), NULL);
 		while (s[i] && s[i] != c)
 			i++;
 	}
