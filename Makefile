@@ -1,11 +1,11 @@
 NAME = libft.a
 
-
+# compile and flags
 CC		=	gcc
 CFLAGS	=	-Wall -Werror -Wextra
 RM		=	rm -f
 
-
+# Sources are all .c files
 SRCS =  ft_atoi.c\
 		ft_bzero.c\
 		ft_calloc.c\
@@ -45,15 +45,15 @@ OBJS	=	$(SRCS:.c=.o)
 
 all: $(NAME)
 
-
+# Create and Index in archive 
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
-
+# clean o created
 clean:
 	$(RM) $(OBJS)
 
-
+# clean o created and exe
 fclean: clean
 	$(RM) $(NAME)
 
