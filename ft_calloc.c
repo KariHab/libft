@@ -6,7 +6,7 @@
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 13:02:47 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/20 18:21:37 by khabbout         ###   ########.fr       */
+/*   Updated: 2023/04/06 09:45:21 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*ptr;
 
 	ptr = malloc(count * size);
-	if (ptr == NULL)
+	if (!ptr)
 		return (ptr);
 	ft_bzero(ptr, count * size);
 	return (ptr);

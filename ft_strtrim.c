@@ -34,7 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*str;
 
-	if (s1 == NULL || set == NULL)
+	if (!s1 || !set)
 		return (NULL);
 	beg = 0;
 	while (s1[beg] && is_in_set(s1[beg], set))
@@ -43,7 +43,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (end > beg && is_in_set(s1[end - 1], set))
 		end--;
 	str = malloc(sizeof(char) * (end - beg + 1));
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (beg < end)

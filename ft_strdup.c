@@ -6,7 +6,7 @@
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:31:37 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/20 18:20:24 by khabbout         ###   ########.fr       */
+/*   Updated: 2023/04/06 09:48:06 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s1)
 	int		len;
 	char	*copy;
 
-	if (s1 == NULL)
+	if (!s1)
 		return (NULL);
 	len = 0;
 	while (s1[len])

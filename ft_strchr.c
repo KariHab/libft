@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 
 	i = 0;
 	len = ft_strlen(s);
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	while (i <= len)
 	{

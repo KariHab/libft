@@ -36,7 +36,7 @@ char	*ft_itoa(int nbr)
 
 	size = get_size(nbr);
 	tmp = ft_calloc(size + 1, (sizeof(char)));
-	if (tmp == NULL)
+	if (!tmp)
 		return (NULL);
 	tmp[size] = '\0';
 	nb = nbr;

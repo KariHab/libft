@@ -6,7 +6,7 @@
 /*   By: khabbout <khabbout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:31:41 by khabbout          #+#    #+#             */
-/*   Updated: 2023/01/20 18:20:32 by khabbout         ###   ########.fr       */
+/*   Updated: 2023/04/06 09:49:08 by khabbout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	j = ft_strlen(src);
 	i = 0;
-	if (dst == NULL || src == NULL)
+	if (!dst || !src)
 		return (0);
 	if (dstsize > 0)
 	{

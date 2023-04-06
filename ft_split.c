@@ -40,7 +40,7 @@ static char	*ft_memory(const char *str, char c)
 	while (str[i] && str[i] != c)
 		i++;
 	newstr = ft_calloc(i + 1, sizeof(char));
-	if (newstr == NULL)
+	if (!newstr)
 		return (NULL);
 	while (i--)
 		newstr[i] = str[i];
@@ -65,10 +65,10 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	word = 0;
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	tab = (char **)ft_calloc(count_word(s, c) + 1, sizeof(char *));
-	if (tab == NULL)
+	if (!tab)
 		return (NULL);
 	while (count_word(s + i, c))
 	{
